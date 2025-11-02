@@ -12,3 +12,10 @@ Commits Semânticos
 | `perf:`     | Melhoria de desempenho              |
 | `test:`     | Adição de testes                    |
 | `chore:`    | Tarefas de manutenção               |
+
+
+ Exemplo:
+
+
+git commit -m "feat: implementa validação dinâmica de CPF"
+git commit -m "fix: corrige erro de formatação de telefone"
