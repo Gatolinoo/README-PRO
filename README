@@ -1,0 +1,48 @@
+# 🌿 Vida Solidária
+
+Projeto desenvolvido como parte da disciplina de **JavaScript Avançado** e **Entrega Final** da Cruzeiro do Sul Virtual.
+
+O sistema “Vida Solidária” tem como objetivo transformar uma interface estática em uma **aplicação web dinâmica e acessível**, com foco em **validação de formulários**, **manipulação do DOM**, **acessibilidade WCAG 2.1 AA**, e **otimização para produção**.
+
+---
+
+## 📋 Sumário
+
+- [Objetivos do Projeto](#-objetivos-do-projeto)
+- [Funcionalidades Implementadas](#-funcionalidades-implementadas)
+- [Estrutura do Projeto](#-estrutura-do-projeto)
+- [Acessibilidade (WCAG 2.1 AA)](#-acessibilidade-wcag-21-aa)
+- [Fluxo de Versionamento (GitFlow)](#-fluxo-de-versionamento-gitflow)
+- [Commits Semânticos](#-commits-semânticos)
+- [Otimização para Produção](#-otimização-para-produção)
+- [Como Executar o Projeto](#-como-executar-o-projeto)
+- [Histórico de Versões](#-histórico-de-versões)
+- [Autor](#-autor)
+
+---
+
+## 🎯 Objetivos do Projeto
+
+- Aplicar **manipulação do DOM** e **eventos JavaScript** para criar uma interface interativa;  
+- Implementar um sistema básico de **Single Page Application (SPA)**;  
+- Criar **validações dinâmicas** de formulários com feedback ao usuário;  
+- Garantir **acessibilidade digital** conforme diretrizes **WCAG 2.1 Nível AA**;  
+- Aplicar boas práticas de **versionamento GitFlow** e **deploy em produção**;  
+- Realizar **minificação** e **compressão de recursos** para otimização.
+
+---
+
+## ⚙️ Funcionalidades Implementadas
+
+✅ Validação completa de formulário (nome, e-mail, CPF, telefone, endereço etc.)  
+✅ Exibição de mensagens de erro e sucesso dinamicamente via DOM  
+✅ Armazenamento temporário dos dados no navegador (localStorage – opcional)  
+✅ Navegação acessível por teclado e leitores de tela  
+✅ Modo de alto contraste e modo escuro  
+✅ Estrutura modular de JavaScript (arquivos separados por funcionalidade)  
+✅ Preparação para SPA (páginas Início, Projetos e Cadastro)
+
+---
+
+## 🗂 Estrutura do Projeto
+
