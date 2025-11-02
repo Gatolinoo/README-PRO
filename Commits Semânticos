@@ -1,0 +1,14 @@
+Commits Semânticos
+
+
+
+| Tipo        | Descrição                           |
+| ----------- | ----------------------------------- |
+| `feat:`     | Nova funcionalidade                 |
+| `fix:`      | Correção de erro                    |
+| `docs:`     | Alterações na documentação          |
+| `style:`    | Estilo e formatação                 |
+| `refactor:` | Refatoração sem mudar comportamento |
+| `perf:`     | Melhoria de desempenho              |
+| `test:`     | Adição de testes                    |
+| `chore:`    | Tarefas de manutenção               |
