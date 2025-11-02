@@ -1,0 +1,79 @@
+/* Estilos básicos e acessibilidade */
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--cor-fundo, #ffffff);
+  color: var(--cor-texto, #1a1a1a);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+header, main, footer {
+  padding: 1em 2em;
+}
+
+h1, h2, legend {
+  color: var(--cor-primaria, #0066cc);
+}
+
+/* Links e botões */
+a {
+  color: var(--cor-primaria, #0066cc);
+  text-decoration: none;
+}
+a:hover, button:hover {
+  text-decoration: underline;
+}
+
+/* Foco visível para teclado */
+a:focus, button:focus, input:focus, select:focus, textarea:focus {
+  outline: 2px solid #2a9d8f;
+  background-color: #e0f7fa;
+}
+
+/* Skip link (pular para o conteúdo principal) */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 8px;
+  z-index: 100;
+  text-decoration: none;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* Mensagens de erro */
+.erro {
+  font-size: 0.9em;
+  color: #d32f2f;
+  margin-left: 10px;
+}
+
+/* Modo alto contraste */
+body.alto-contraste {
+  --cor-fundo: #000000;
+  --cor-texto: #ffffff;
+  --cor-primaria: #ffff00;
+}
+
+body.alto-contraste input,
+body.alto-contraste select,
+body.alto-contraste textarea {
+  background-color: #222;
+  color: #fff;
+  border: 2px solid #ff0;
+}
+
+button {
+  margin-top: 1em;
+  padding: 10px 16px;
+  background-color: var(--cor-primaria, #0066cc);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
