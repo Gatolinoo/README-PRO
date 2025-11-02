@@ -1,0 +1,31 @@
+
+---
+
+## ♿ Acessibilidade (WCAG 2.1 AA)
+
+O projeto segue os seguintes princípios:
+
+- **Navegação por teclado:** todos os elementos interativos podem ser acessados via `Tab`.  
+- **Leitores de tela:** uso de `aria-label`, `alt` e elementos semânticos (`header`, `main`, `footer`, etc.).  
+- **Contraste de cores:** mínimo de 4.5:1.  
+- **Modo alto contraste e escuro:** botão para alternar visualização.  
+- **Mensagens de erro claras:** feedback visual e textual.
+
+---
+
+## 🌿 Fluxo de Versionamento (GitFlow)
+
+- `main` → versão estável (produção)  
+- `develop` → desenvolvimento ativo  
+- `feature/*` → novas funcionalidades  
+- `release/*` → versões preparadas para entrega  
+- `hotfix/*` → correções rápidas em produção  
+
+### Exemplo de fluxo:
+```bash
+git checkout -b feature/validacao-formulario develop
+git commit -m "feat: adiciona validação de formulário"
+git push origin feature/validacao-formulario
+
+git checkout develop
+git merge feature/validacao-formulario
