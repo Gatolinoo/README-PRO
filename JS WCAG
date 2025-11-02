@@ -1,0 +1,99 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.querySelector("form");
+  const btnContraste = document.getElementById("toggle-contrast");
+
+  // Alternância de modo alto contraste
+  if (btnContraste) {
+    btnContraste.addEventListener("click", () => {
+      const isAtivo = document.body.classList.toggle("alto-contraste");
+      btnContraste.setAttribute("aria-pressed", isAtivo);
+      localStorage.setItem("modoContraste", isAtivo);
+    });
+
+    // Mantém preferência do usuário
+    if (localStorage.getItem("modoContraste") === "true") {
+      document.body.classList.add("alto-contraste");
+      btnContraste.setAttribute("aria-pressed", "true");
+    }
+  }
+
+  // Validação do formulário
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    document.querySelectorAll(".erro").forEach(e => e.remove());
+    document.querySelectorAll("[aria-invalid='true']").forEach(el => el.removeAttribute("aria-invalid"));
+
+    const campos = {
+      nome: document.getElementById("nome"),
+      email: document.getElementById("email"),
+      cpf: document.getElementById("cpf"),
+      telefone: document.getElementById("telefone"),
+      nascimento: document.getElementById("nascimento"),
+      endereco: document.getElementById("endereco"),
+      cep: document.getElementById("cep"),
+      cidade: document.getElementById("cidade"),
+      estado: document.getElementById("estado")
+    };
+
+    let valido = true;
+
+    function mostrarErro(campo, mensagem) {
+      const erro = document.createElement("span");
+      erro.classList.add("erro");
+      erro.textContent = mensagem;
+      erro.setAttribute("role", "alert");
+      erro.setAttribute("aria-live", "assertive");
+      campo.setAttribute("aria-invalid", "true");
+      campo.insertAdjacentElement("afterend", erro);
+      valido = false;
+    }
+
+    // Validações
+    if (campos.nome.value.trim().length < 5) {
+      mostrarErro(campos.nome, "Digite seu nome completo (mínimo 5 caracteres).");
+    }
+
+    if (!campos.email.value.includes("@") || !campos.email.value.includes(".")) {
+      mostrarErro(campos.email, "Digite um e-mail válido.");
+    }
+
+    const cpfLimpo = campos.cpf.value.replace(/\D/g, "");
+    if (cpfLimpo.length !== 11) {
+      mostrarErro(campos.cpf, "CPF deve conter 11 números.");
+    }
+
+    const telefoneLimpo = campos.telefone.value.replace(/\D/g, "");
+    if (telefoneLimpo.length < 10) {
+      mostrarErro(campos.telefone, "Digite um telefone válido com DDD.");
+    }
+
+    if (!campos.nascimento.value) {
+      mostrarErro(campos.nascimento, "Informe sua data de nascimento.");
+    }
+
+    if (campos.endereco.value.trim() === "") {
+      mostrarErro(campos.endereco, "Informe o endereço.");
+    }
+
+    const cepLimpo = campos.cep.value.replace(/\D/g, "");
+    if (cepLimpo.length !== 8) {
+      mostrarErro(campos.cep, "CEP deve ter 8 números.");
+    }
+
+    if (campos.cidade.value.trim() === "") {
+      mostrarErro(campos.cidade, "Informe a cidade.");
+    }
+
+    if (campos.estado.value.trim() === "") {
+      mostrarErro(campos.estado, "Informe o estado.");
+    }
+
+    if (valido) {
+      alert("✅ Cadastro realizado com sucesso!");
+      form.reset();
+    } else {
+      alert("⚠️ Corrija os erros antes de enviar novamente.");
+    }
+  });
+});
